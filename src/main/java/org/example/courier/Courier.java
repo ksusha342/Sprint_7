@@ -39,4 +39,11 @@ public class Courier {
         this.firstName = firstName;
     }
 
+    public boolean isCorrect() {
+        if (login == null || password == null) {
+            return false;
+        }
+        return true;
+    }
+
 }
