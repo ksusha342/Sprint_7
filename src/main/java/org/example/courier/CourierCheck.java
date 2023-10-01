@@ -18,7 +18,7 @@ public class CourierCheck {
         response
                 .assertThat()
                 .statusCode(HttpsURLConnection.HTTP_CONFLICT)
-                .body("message", is("Этот логин уже используется. Попробуйте другой."));
+                .body("message", is("Этот логин уже используется"));
     }
 
     public void createdCourierUnsuccessfullyWithoutRequiredFields(ValidatableResponse response) {
@@ -29,12 +29,25 @@ public class CourierCheck {
     }
 
     public int loggedInSuccessfully(ValidatableResponse loginResponse) {
-        int id = loginResponse
+        return loginResponse
                 .assertThat()
                 .statusCode(HttpsURLConnection.HTTP_OK)
                 .extract()
                 .path("id");
-        return id;
+    }
+
+    public void loggedInUnsuccessfullyWithoutRequiredFields(ValidatableResponse loginResponse) {
+        loginResponse
+                .assertThat()
+                .statusCode(HttpsURLConnection.HTTP_BAD_REQUEST)
+                .body("message", is("Недостаточно данных для входа"));
+    }
+
+    public void loggedInUnsuccessfullyWithWrongCredentials(ValidatableResponse loginResponse) {
+        loginResponse
+                .assertThat()
+                .statusCode(HttpsURLConnection.HTTP_NOT_FOUND)
+                .body("message", is("Учетная запись не найдена"));
     }
 
     public void deletedCourierSuccessfully(ValidatableResponse response) {
