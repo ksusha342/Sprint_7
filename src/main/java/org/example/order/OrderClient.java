@@ -24,12 +24,8 @@ public class OrderClient extends Client {
                 .then().log().all();
     }
 
-    public ValidatableResponse getOrderList(int courierId, String nearestStation, int limit, int page) {
+    public ValidatableResponse getOrderList() {
         return spec()
-                .queryParam("courierId", courierId)
-                .queryParam("nearestStation", nearestStation)
-                .queryParam("limit", limit)
-                .queryParam("page", page)
                 .when()
                 .get(ORDER_LIST_PATH)
                 .then().log().all();

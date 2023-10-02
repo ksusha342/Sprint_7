@@ -73,7 +73,7 @@ public class CreateOrderTest {
     }
 
     @After
-    public void cancelObject() {
+    public void cancelOrder() {
         check.cancelOrderSuccessfully(orderClient.cancel(track));
     }
 }
