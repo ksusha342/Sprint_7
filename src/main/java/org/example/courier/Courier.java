@@ -40,10 +40,7 @@ public class Courier {
     }
 
     public boolean isCorrect() {
-        if (login == null || password == null) {
-            return false;
-        }
-        return true;
+        return login != null && password != null;
     }
 
 }
