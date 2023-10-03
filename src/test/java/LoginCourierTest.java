@@ -98,5 +98,4 @@ public class LoginCourierTest {
             check.deletedCourierSuccessfully(delete);
         }
     }
-
 }

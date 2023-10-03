@@ -2,7 +2,6 @@ import io.restassured.response.ValidatableResponse;
 import org.example.courier.*;
 import io.qameta.allure.junit4.DisplayName;
 import io.qameta.allure.Description;
-import io.qameta.allure.Step;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

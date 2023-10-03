@@ -1,7 +1,6 @@
 package org.example.order;
 
 import io.restassured.response.ValidatableResponse;
-
 import javax.net.ssl.HttpsURLConnection;
 
 import static org.hamcrest.Matchers.is;
