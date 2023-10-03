@@ -22,6 +22,7 @@ public class LoginCourierTest {
     public void createCredentials() {
         credentials = Credentials.from(courier);
     }
+
     @Test
     @DisplayName("Check courier login")
     @Description("Basic courier login test")

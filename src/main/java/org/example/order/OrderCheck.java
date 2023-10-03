@@ -27,6 +27,6 @@ public class OrderCheck {
         response
                 .assertThat()
                 .statusCode(HttpsURLConnection.HTTP_OK)
-                .body("orders.id", notNullValue());
+                .body("orders.id[0]", notNullValue());
     }
 }
